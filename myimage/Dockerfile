@@ -10,7 +10,7 @@ RUN apt-get install -y nginx htop php7.2-fpm supervisor && \
 
 #Define the ENV variable
 ENV nginx_vhost /etc/nginx/sites-available/default
-ENV php_conf /etc/php/7.0/fpm/php.ini
+ENV php_conf /etc/php/7.2/fpm/php.ini
 ENV nginx_conf /etc/nginx/nginx.conf
 ENV supervisor_conf /etc/supervisor/supervisord.conf
 
