@@ -1,11 +1,11 @@
 #Download base Ubuntu image
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 # Update Software repository
 RUN apt-get update
 
 # Install nginx, php-fpm and supervisord from ubuntu repository
-RUN apt-get install -y nginx htop php7.0-fpm supervisor && \
+RUN apt-get install -y nginx htop php7.2-fpm supervisor && \
     rm -rf /var/lib/apt/lists/*
 
 #Define the ENV variable
