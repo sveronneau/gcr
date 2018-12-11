@@ -24,7 +24,7 @@ COPY supervisord.conf ${supervisor_conf}
 
 RUN mkdir -p /run/php && \
     chown -R www-data:www-data /var/www/html && \
-    chown -R www-data:www-data /run/php
+    chown -R www-data:www-data /run/php && \
     chmod +x start.sh
     
 # Volume configuration
