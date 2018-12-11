@@ -30,6 +30,7 @@ RUN mkdir -p /run/php && \
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
 
 # Configure Services and Port
+RUN /bin/bash -c 'chmod +x start.sh;
 COPY start.sh /start.sh
 CMD ["./start.sh"]
 
