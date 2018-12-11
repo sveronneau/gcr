@@ -25,12 +25,12 @@ COPY supervisord.conf ${supervisor_conf}
 RUN mkdir -p /run/php && \
     chown -R www-data:www-data /var/www/html && \
     chown -R www-data:www-data /run/php
-
+    chmod +x start.sh
+    
 # Volume configuration
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
 
 # Configure Services and Port
-RUN /bin/bash -c 'chmod +x start.sh;
 COPY start.sh /start.sh
 CMD ["./start.sh"]
 
