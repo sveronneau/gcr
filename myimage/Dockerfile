@@ -24,15 +24,14 @@ COPY supervisord.conf ${supervisor_conf}
 
 RUN mkdir -p /run/php && \
     chown -R www-data:www-data /var/www/html && \
-    chown -R www-data:www-data /run/php && \
-    chmod +x start.sh
-
+    chown -R www-data:www-data /run/php
 
 # Volume configuration
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
 
 # Configure Services and Port
 COPY start.sh /start.sh
+RUN chmod +x start.sh
 CMD ["./start.sh"]
 
 EXPOSE 80 443
